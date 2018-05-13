@@ -111,7 +111,11 @@ export default class Login extends Component {
         <br /><br />
 
         <form onSubmit={this.handleSubmit}>
+		<ControlLabel><b>Wanna test Huddle?</b> Use guest login!</ControlLabel><br />
+		<ControlLabel>Email login: <b>guest@guest.com</b></ControlLabel><br />
+		<ControlLabel>Password: <b>helloguest</b></ControlLabel><br /><br />
           <FormGroup controlId="email" bsSize="large">
+			
             <ControlLabel>Email</ControlLabel>
             <FormControl
               autoFocus
