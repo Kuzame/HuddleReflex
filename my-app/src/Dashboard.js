@@ -119,6 +119,7 @@ class BoardTileTools extends Component {
     (this.props.shareForm)
       ? this.setState({ shareButtonTitle: "Close Share Form", shareFormClasses: "fa fa-times"})
       : this.setState({ shareButtonTitle: "Share Board", shareFormClasses: "fa fa-pencil"});
+
   }
 
 	rename() {
@@ -414,6 +415,11 @@ class Dashboard extends Component {
 		//this.onNewBoardSubmit = this.onNewBoardSubmit.bind(this);
 	}
 	componentWillMount() {
+		auth.onAuthStateChanged((user) => {
+		  if (!user) {//user is not logged in
+			this.props.history.push('/login');
+		  }
+		});
 	}
 
 	componentDidMount() {
